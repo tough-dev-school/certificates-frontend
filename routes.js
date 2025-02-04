@@ -21,7 +21,14 @@ router.get("/:slug/:language", async (req, res) => {
       `/${diplomaToRedirect.slug}/${diplomaToRedirect.language.toLowerCase()}`,
     );
   } else {
-    res.json({ diploma });
+    const languages = {};
+    languages[diploma.language.toLowerCase()] = { slug: diploma.slug };
+    diploma.other_languages.forEach((diplomaInOtherLanguage) => {
+      languages[diplomaInOtherLanguage.language.toLowerCase()] = {
+        slug: diplomaInOtherLanguage.slug,
+      };
+    });
+    res.render("diploma.html", { diploma, languages });
   }
 });
 

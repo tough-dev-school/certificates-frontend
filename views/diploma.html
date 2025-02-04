@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block body %}
+<section class="diploma">
+  <div class="diploma-image">
+    <img class="diploma-image__image" src="{{ diploma.image }}" />
+  </div>
+  <div class="lang-switcher">
+    {% for lang, diplomaInOtherLanguage in languages | dictsort %} {% if
+    diplomaInOtherLanguage.slug == diploma.slug %}
+    <span class="lang-switcher__link lang-switcher__link--active"
+      >{{ lang }}</span
+    >
+    {% else %}
+    <a class="lang-switcher__link" href="/{{ diploma.slug }}/{{ lang }}"
+      >{{ lang }}</a
+    >
+    {% endif %} {% endfor %}
+  </div>
+</section>
+{% endblock %}

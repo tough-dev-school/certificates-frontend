@@ -1,0 +1,47 @@
+body {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: #ff8562;
+  text-decoration: none;
+}
+
+.diploma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85vh;
+  padding-top: 2rem;
+}
+.diploma-lang-switcher {
+  margin-top: 1rem;
+}
+
+.diploma-image {
+  position: relative;
+}
+.diploma-image__image {
+  max-height: 85vh;
+  max-width: 95vw;
+}
+
+.copyright {
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 1rem;
+
+  @media print {
+    display: none;
+  }
+}
+.copyright__notice {
+  display: block;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
