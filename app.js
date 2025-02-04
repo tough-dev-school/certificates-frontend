@@ -29,6 +29,8 @@ app.engine("html", require("./lib/nunjucks"));
 app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/", require("./routes"));
+
 app.use(() => {
   // send 404 by default
   throw new Error("404");
