@@ -24,8 +24,16 @@ a {
   position: relative;
 }
 .diploma-image__image {
-  max-height: 85vh;
+  height: 85vh;
   max-width: 95vw;
+}
+
+.lang-switcher {
+  margin-top: 1rem;
+
+  @media print {
+    display: none;
+  }
 }
 
 .copyright {
