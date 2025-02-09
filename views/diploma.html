@@ -1,7 +1,10 @@
 {% extends "layout.html" %} {% block body %}
 <section class="diploma">
   <div class="diploma-image">
-    <img class="diploma-image__image" src="{{ diploma.image | replace('http://', 'https://') }}" />
+    <img
+      class="diploma-image__image"
+      src="{{ diploma.image | replace('http://', 'https://') }}"
+    />
   </div>
   {% if languages | length > 1 %}
   <div class="lang-switcher">
@@ -11,7 +14,7 @@
       >{{ lang }}</span
     >
     {% else %}
-    <a class="lang-switcher__link" href="/{{ diploma.slug }}/{{ lang }}"
+    <a class="lang-switcher__link" href="/{{ diplomaInOtherLanguage.slug }}"
       >{{ lang }}</a
     >
     {% endif %} {% endfor %}
