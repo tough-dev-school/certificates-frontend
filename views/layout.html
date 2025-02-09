@@ -5,17 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <script
       async
       src="https://a.tough-dev.school/a.js"
@@ -25,12 +19,17 @@
     ></script>
 
     <title>{% block title %}{% endblock %}</title>
+    {% block opengraph %}{% endblock %}
   </head>
   <body>
     {% block body %}{% endblock %}
     <div class="copyright">
       <p class="copyright__notice">
-        © <a href="https://tough-dev.school">Школа Сильных Программистов</a>
+        {% if diploma.language == 'RU' %}
+          © <a href="https://tough-dev.school">Школа Сильных Программистов</a>
+        {% else %}
+          © <a href="https://codenest.school">CodeNest school</a>
+        {% endif %}
       </p>
     </div>
   </body>

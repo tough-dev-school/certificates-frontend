@@ -14,10 +14,26 @@ router.get("/:slug", async (req, res) => {
       slug: diplomaInOtherLanguage.slug,
     };
   });
-  res.render("diploma.html", { diploma, languages });
+
+  const course = {
+    name: diploma.course.name.split("(")[0].trim(),
+    name_en: diploma.course.name_international.split("(")[0].trim(),
+  };
+  const title = {
+    ru: `${diploma.student.first_name} ${diploma.student.last_name} — ${diploma.course.name}`,
+    en: `${diploma.student.first_name_en} ${diploma.student.last_name_en} — ${diploma.course.name_international}`,
+  };
+
+  res.render("diploma.html", {
+    diploma,
+    languages,
+    course,
+    title,
+  });
 });
 
-router.get("/:slug/:language", async (req, res) => { // legacy route
+router.get("/:slug/:language", async (req, res) => {
+  // legacy route
   const { slug, language } = req.params;
   const diploma = await api.fetchDiploma({ slug });
 

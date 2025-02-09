@@ -38,9 +38,7 @@ app.use(() => {
 
 if (process.env.NODE_ENV !== "development") {
   Sentry.setupExpressErrorHandler(app);
-  app.use((err, req, res, next) =>
-    res.status(404).render("error", { path: req.path }),
-  );
+  app.use((err, req, res, next) => res.status(404).render("error", { path: req.path }));
 }
 
 module.exports = app;
