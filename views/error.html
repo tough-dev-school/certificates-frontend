@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+  <title>¯\_(ツ)_/¯</title>
+{% endblock %}
+{% block body %}
+  <section class="error">
+    <h1>У нас случилась какая-то фигня</h1>
+    <p>Кажется что-то сломалось. Если вас это беспокоит, напишите нам в чатик внизу страницы</p>
+  </section>
+{% endblock %}
+{% block opengraph %}
+  <meta name="robots" , rel="noindex, nofollow" />
+  <!-- Chatra {literal} -->
+  <script>
+    (function (d, w, c) {
+      w.ChatraID = "wGsLsneaFkmaCMBY3";
+      var s = d.createElement("script");
+      w[c] =
+        w[c] ||
+        function () {
+          (w[c].q = w[c].q || []).push(arguments);
+        };
+      s.async = true;
+      s.src = "https://call.chatra.io/chatra.js";
+      if (d.head) d.head.appendChild(s);
+    })(document, window, "Chatra");
+  </script>
+  <!-- /Chatra {/literal} -->
+{% endblock %}

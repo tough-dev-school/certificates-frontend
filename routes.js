@@ -3,9 +3,17 @@ const api = require("./lib/api");
 
 const router = express.Router();
 
-router.get("/:slug", async (req, res) => {
+router.get("/:slug", async (req, res, next) => {
   const { slug } = req.params;
-  const diploma = await api.fetchDiploma({ slug });
+  let diploma;
+  try {
+    diploma = await api.fetchDiploma({ slug });
+  } catch (e) {
+    return await next(e);
+  }
+  if (!diploma) {
+    return await next();
+  }
 
   const languages = {};
   languages[diploma.language.toLowerCase()] = { slug: diploma.slug };

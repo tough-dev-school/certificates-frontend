@@ -18,19 +18,11 @@
       data-ackee-opts='{ "detailed": true }'
     ></script>
 
-    <title>{% block title %}{% endblock %}</title>
-    {% block opengraph %}{% endblock %}
+    {% block title %}{% endblock %}
+    {% block opengraph %}
+    {% endblock %}
   </head>
   <body>
     {% block body %}{% endblock %}
-    <div class="copyright">
-      <p class="copyright__notice">
-        {% if diploma.language == 'RU' %}
-          © <a href="https://tough-dev.school">Школа Сильных Программистов</a>
-        {% else %}
-          © <a href="https://codenest.school">CodeNest school</a>
-        {% endif %}
-      </p>
-    </div>
   </body>
 </html>

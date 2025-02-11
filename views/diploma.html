@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
-{% block title %}{% if diploma.language == 'RU' %}
-  {{ title.ru }}
-{% else %}
-  {{ title.en }}
-{% endif %}{% endblock %}
+{% block title %}<title>
+  {% if diploma.language == 'RU' %}
+    {{ title.ru }}
+  {% else %}
+    {{ title.en }}
+  {% endif %}
+</title>{% endblock %}
 {% block body %}
   <section class="diploma">
     <div class="diploma-image">
@@ -21,6 +23,15 @@
         {% endif %}{% endfor %}
       </div>
     {% endif %}
+  </section>
+  <section class="copyright">
+    <p class="copyright__notice">
+      {% if diploma.language == 'RU' %}
+        © <a href="https://tough-dev.school">Школа Сильных Программистов</a>
+      {% else %}
+        © <a href="https://codenest.school">CodeNest school</a>
+      {% endif %}
+    </p>
   </section>
 {% endblock %}
 {% block opengraph %}

@@ -8,6 +8,21 @@ a {
   text-decoration: none;
 }
 
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 10vh;
+  p {
+    margin-top: 3rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
 .diploma {
   display: flex;
   align-items: center;
