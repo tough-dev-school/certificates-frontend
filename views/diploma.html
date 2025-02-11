@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
-{% block title %}<title>
-  {% if diploma.language == 'RU' %}
-    {{ title.ru }}
-  {% else %}
-    {{ title.en }}
-  {% endif %}
-</title>{% endblock %}
+{% block title %}
+  <title>
+    {% if diploma.language == 'RU' %}
+      {{ title.ru }}
+    {% else %}
+      {{ title.en }}
+    {% endif %}
+  </title>
+{% endblock %}
 {% block body %}
   <section class="diploma">
     <div class="diploma-image">
