@@ -11,7 +11,7 @@ RUN npm ci --no-audit --no-fund && rm -Rf /root/.npm
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
-HEALTHCHECK CMD wget -q -O /dev/null http://localhost:3000 || exit 1
+HEALTHCHECK CMD wget -q -O /dev/null http://localhost:3000/healthcheck || exit 1
 
 USER nobody
 CMD ["node", "./server.js"]

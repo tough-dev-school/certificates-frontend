@@ -3,6 +3,8 @@ const api = require("./lib/api");
 
 const router = express.Router();
 
+router.get("/healthcheck", (req, res) => res.send("OK"));
+
 router.get("/:slug", async (req, res, next) => {
   const { slug } = req.params;
   let diploma;
