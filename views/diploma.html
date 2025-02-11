@@ -21,7 +21,7 @@
         %}
           <span class="lang-switcher__link lang-switcher__link--active">{{ lang }}</span>
         {% else %}
-          <a class="lang-switcher__link" href="/{{ diplomaInOtherLanguage.slug }}">{{ lang }}</a>
+          <a class="lang-switcher__link" href="/{{ diplomaInOtherLanguage.slug }}/">{{ lang }}</a>
         {% endif %}{% endfor %}
       </div>
     {% endif %}
@@ -38,7 +38,7 @@
 {% endblock %}
 {% block opengraph %}
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ origin }}/{{ diploma.slug }}" />
+  <meta property="og:url" content="{{ origin }}/{{ diploma.slug }}/" />
   <meta
     property="og:title"
     content="{% if diploma.language == 'RU' %}{{ title.ru }}{% else %}{{ title.en }}{% endif %}"

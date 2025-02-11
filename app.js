@@ -22,6 +22,8 @@ if (process.env.SENTRY_DSN) {
   });
 }
 
+app.use(require("./middleware/fancy_urls"));
+
 // view engine setup
 app.set("view engine", "html");
 app.engine("html", require("./lib/nunjucks"));
