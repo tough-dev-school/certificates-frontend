@@ -16,6 +16,7 @@
   "description": "",
   "dependencies": {
     "@sentry/node": "^8.51.0",
+    "ackee-tracker": "^5.1.0",
     "axios": "^1.7.9",
     "compression": "^1.7.5",
     "consola": "^3.4.0",

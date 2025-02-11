@@ -22,14 +22,14 @@ if (process.env.SENTRY_DSN) {
   });
 }
 
-app.use(require("./middleware/fancy_urls"));
-
 // view engine setup
 app.set("view engine", "html");
 app.engine("html", require("./lib/nunjucks"));
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/a.js", (req, res) => res.sendFile(__dirname + "/node_modules/ackee-tracker/dist/ackee-tracker.min.js"));
+app.use(require("./middleware/fancy_urls"));
 
 app.use("/", require("./routes"));
 
